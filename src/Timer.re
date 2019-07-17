@@ -16,6 +16,13 @@ module Button = {
   };
 };
 
+let updateTitle: string => unit = [%bs.raw
+  {|
+  function updateTitle(remaining) {
+    document.title = "⏰ " + remaining + " ⏰";
+  }|}
+];
+
 [@react.component]
 let make = () => {
   let (state, dispatch) =
